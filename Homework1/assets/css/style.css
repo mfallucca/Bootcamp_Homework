@@ -92,6 +92,7 @@ ul {
 	margin-right: 70px;
 	margin-top: 40px;
 	border: solid #dddddd 1px;
+	font-family: 'Georgia', Times, Times New Roman, serif;
 }
 
 .leftsection hr {
@@ -110,12 +111,12 @@ footer {
 	width: 1180px;
 }
 
-.leftsection div {
+/*.leftsection div {
 	margin: 5%;
 	font-size: 20px;
 	color: #777777;
 	line-height: 1.5;
-}
+}*/
 
 .leftsection form {
 }
@@ -132,12 +133,11 @@ footer {
 	color: #4aaaa5;
 }
 
-.rightsection div {
+.margin {
 	margin: 5%;
 	font-size: 20px;
 	color: #777777;
 	font-weight: bold;
-	font-family: 'Georgia', Times, Times New Roman, serif;
 }
 
 .rightsection hr {
@@ -160,13 +160,14 @@ footer {
 	margin-top: 10px;
 	margin-left: 0;
 	margin-bottom: 5px;
+	margin-right: 20px;
 }
 
 .iconsize img {
-	margin: auto;
 	height: 60px;
 	width: 60px;
-	padding: 3px;
+	margin: 5px;
+	margin-top: 10px;
 }
 
 li a:link, li a:visited {
@@ -178,11 +179,15 @@ li a:link, li a:visited {
     display: inline-block;
 }
 
-li a:hover, li a:active {
+li a:hover {
     background-color: #4aaaa5;
     color: #ffffff;
 }
 
+
+li a:active {
+	background-color: #bbbbbb;
+}
 /*#Message {
 	width: 90%;
 	height: 200px;
@@ -192,10 +197,14 @@ li a:hover, li a:active {
 .leftsection textarea {
 	width: 100%;
 	height: 100px;
+	border: 1px solid #cccccc;
 }
 
 .leftsection input {
 	width: 100%;
+	border: 1px solid #cccccc;
+	height: 25px;
+	font-size: 100%;
 }
 
 #Submit {
@@ -206,10 +215,9 @@ li a:hover, li a:active {
     border: none;	
 }
 
-.portimages img {
+.portimages {
 	height: 140px;
 	width: 190px;
-	margin: 5px 30px 5px 0px;
 }
 
 .mainsectionport {
@@ -222,3 +230,38 @@ li a:hover, li a:active {
 	height: 650px;
 }
 
+.leftsection p {
+	line-height: 1.5;
+}
+
+.marginright {
+	margin-right: 100px;
+}
+
+.marginpics {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.image { 
+   position: relative;
+}
+
+.image h1 {
+	position: absolute;
+	background-color: #4aaaa5;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	color: #ffffff;
+	padding: 5px 0px;
+	margin-top: 100px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 250;
+	bottom: 10px;
+}
+
+.portimages img {
+	height: 100%;
+	width: 100%;
+}
