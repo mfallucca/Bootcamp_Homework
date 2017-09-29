@@ -1,0 +1,46 @@
+#myname {
+	background-color: #4aaaa5;
+	color: #ffffff;
+}
+
+body {
+    background: url('http://creationmedia.in/wp-content/uploads/2015/03/More-Tumblr-Backgrounds-for-guys-light-gray.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.red{
+    color:red;
+    }
+.form-area
+{
+    background-color: #FAFAFA;
+	padding: 10px 40px 60px;
+	margin: 10px 0px 60px;
+	border: 1px solid GREY;
+	}
+	
+.thumbnail {
+	position: relative;
+	color: white;
+}
+
+h1 {
+	position: absolute;
+	bottom: 0;
+	z-index: 2500;
+	background-color: #4aaaa5;
+	width: 97%;
+	text-align: center;
+	color: white;
+}
+
+.caption {
+	color: white;
+}
