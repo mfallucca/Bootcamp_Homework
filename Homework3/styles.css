@@ -54,7 +54,7 @@ body {
 
 .wrongletterslist {
 	text-align: center;
-	width:150px;
+	width:200px;
     height:30px;
     margin:auto;
     padding:3pt;
@@ -83,4 +83,64 @@ body {
 	text-align: center;
 	border: 2px;
 	border-style: dotted solid;
+}
+
+.remainingguessescontainer {
+	padding: 20px 50px;
+}
+
+.remainingguessestitle {
+	text-align: center;
+	border: 2px;
+	border-style: dotted solid;
+}
+
+#remainingguesses {
+
+}
+
+.remainingguesses {
+	padding: 5px 20px;
+	width: 200px;
+	margin: auto;
+	border: 2px;
+	text-align: center;
+}
+
+.remainingguesses {
+	padding: 5px 20px;
+	width: 200px;
+	margin: auto;
+	border: 2px;
+	text-align: center;
+}
+
+.recordcontainer {
+
+}
+
+.recoordtitle {
+	text-align: center;
+	border: 2px;
+	border-style: dotted solid;
+}
+
+.recordbox {
+
+}
+
+.recordwins {
+	text-align: center;
+}
+
+.recordlosses {
+	text-align: center;
+}
+
+.winstitle {
+	text-align: center;
+}
+
+.lossestitle {
+	text-align: center;
 }
