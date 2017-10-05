@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hangman Game!</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class='mainwrapper'> <!-- Top Wrapper Div -->
+      <div class='topmidcontainer'>
+        <div class='topmidtitle'>Guess A Letter!</div>
+        <div class='inputbox'>
+          <input id='inputletter' type='text' maxlength='1'/>
+        </div>
+      </div>
+    
+      <div class='lettersguessedcontainer'>
+        <div class='lettersguessedtitle'>Guessed Letters</div>
+        <div id="wrongletters" class='wrongletterslist'></div>
+      </div>
+
+    <div class='realwordcontainer'>
+    	<div class='realwordtitle'>Your Word</div>
+        <div class='wordbox'>
+            <div class='realword'>
+            </div>
+        </div>
+    </div>   
+    </div>
+</body>
+<script src='main.js'></script>
+</html>

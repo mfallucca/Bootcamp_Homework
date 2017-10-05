@@ -1,0 +1,86 @@
+body { 
+    font-family: Arial, Tacoma, sans-serif; 
+    font-weight: bold; 
+    font-size: 16pt;
+    background-color: #3d989f;
+    height: 100%;
+    width: 	100%;
+}
+
+.mainwrapper {
+	height: 200px;
+	width: 	700px;
+	margin: auto;
+}
+
+.topmidcontainer {
+	padding: 20px 50px;
+}
+
+.topmidtitle {
+	text-align: center;
+	border: 2px;
+	border-style: dotted solid;
+}
+
+.inputbox {
+	text-align: center;
+	width:75px;
+    height:30px;
+    margin:auto;
+    padding:3pt;
+    border: 1px #000000 solid;
+    background: #332e7b;;
+}
+
+#inputletter {
+	width: 20px;
+	text-align: center;
+}
+
+.lettersguessedcontainer {
+	padding: 20px 50px;
+}
+
+.lettersguessedtitle {
+	text-align: center;
+	border: 2px;
+	border-style: dotted solid;
+}
+
+#wrongletters {
+
+}
+
+.wrongletterslist {
+	text-align: center;
+	width:150px;
+    height:30px;
+    margin:auto;
+    padding:3pt;
+    border: 1px #000000 solid;
+    background: #332e7b;;
+    color: #ffffff;
+}
+
+.realwordcontainer {
+	padding: 20px 50px;
+}
+
+.wordbox {
+	padding: 5px 20px;
+	width: 200px;
+	margin: auto;
+	border: 2px;
+}
+
+.realword {
+	text-align: center;
+	border: 2px;
+}
+
+.realwordtitle {
+	text-align: center;
+	border: 2px;
+	border-style: dotted solid;
+}
