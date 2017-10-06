@@ -31,13 +31,15 @@ var losscount = 0;
 console.log(remaining);
 console.log(remainingguesses);
 
-
+// press key function
 function presskey () {
 	remainingguesses--;
     var tempChar = $('#inputletter').val().toLowerCase();
     $('#wrongletters').append(tempChar);
     $('#inputletter').val("");
-    // loops through array to see if the guessed letter matches any position
+}
+// loops through array to see if the guessed letter matches any position
+function guessesleft () {
     if (remainingguesses > 0) {
 	    for (var x = 0; x < gameWord.length; x++) {
 	   	if (gameWord[x] === tempChar) { 
@@ -53,6 +55,9 @@ function presskey () {
 		alert("You've lost!");
 		losscount++;
 	}
+}
+
+function updaterealword() {
 	$('.realword').empty();
 	for (i = 0; i < gameWord.length; i++) {
 		$('.realword').append(answerArray[i] + " ");
@@ -61,23 +66,24 @@ function presskey () {
 	console.log(answerArray);
 	console.log(remainingguesses);
 	console.log(remaining);
+}
+function checkwin() {
 	if (remaining === 0) {
-		alert("You won! The word was " + gameWord + "." + " Click ok for a new game!")? "" : location.reload();
+		alert("You won! The word was " + gameWord + "." + " Click ok for a new game!");
 		wincount++;
 		$(".recordwins").html(wincount);
 		resetgame();
-		remainingguesses = 15;
-		remaining = gameWord.length;
-	}
-	if (remainingguesses === 0) {
-		alert("You lost! The word was " + gameWord + "." + " Click ok for a new game!")? "" : location.reload();
-		$(".recordlosses").html(losscount); 
-		losscount++;
-		resetgame();
-		remainingguesses = 15;
-		remaining = gameWord.length;
 	}
 }
+function checkloss() {
+	if (remainingguesses === 0) {
+		alert("You lost! The word was " + gameWord + "." + " Click ok for a new game!");
+		$(".recordlosses").html(losscount);
+		losscount++;
+		resetgame();
+	}
+}
+
 
 
 
@@ -101,5 +107,10 @@ function resetgame() {
 
 }
 
+
 	$('#inputletter').keyup(presskey);
+	$('#inputletter').keyup(guessesleft);
+	$('#inputletter').keyup(updaterealword);
+	$('#inputletter').keyup(checkwin);
+	$('#inputletter').keyup(checkloss);
 
