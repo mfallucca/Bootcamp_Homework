@@ -62,7 +62,7 @@ function presskey () {
 	console.log(remainingguesses);
 	console.log(remaining);
 	if (remaining === 0) {
-		alert("You won! The word was " + gameWord + "." + " Click ok for a new game!")? "" : location.reload();
+		alert("You won! The word was " + gameWord + "." + " Click ok for a new game!");
 		wincount++;
 		$(".recordwins").html(wincount);
 		resetgame();
@@ -70,12 +70,10 @@ function presskey () {
 		remaining = gameWord.length;
 	}
 	if (remainingguesses === 0) {
-		alert("You lost! The word was " + gameWord + "." + " Click ok for a new game!")? "" : location.reload();
+		alert("You lost! The word was " + gameWord + "." + " Click ok for a new game!");
 		$(".recordlosses").html(losscount); 
 		losscount++;
 		resetgame();
-		remainingguesses = 15;
-		remaining = gameWord.length;
 	}
 }
 
@@ -83,8 +81,7 @@ function presskey () {
 
 
 function resetgame() {
-	var words = ["monkey", "cat", "dog", "lion"];
-	var gameWord = words[Math.floor(Math.random() * words.length)];
+	gameWord = words[Math.floor(Math.random() * words.length)];
 
 	for (var i = 0; i < gameWord.length; i++) {
 	  answerArray[i] = "_";
@@ -94,8 +91,8 @@ function resetgame() {
 		$('.realword').append(answerArray[i] + " ");
 	}
 
-	var remaining = gameWord.length;
-	var remainingguesses = 15;
+	remaining = gameWord.length;
+	remainingguesses = 15;
 	$('#remainingguesses').html(remainingguesses);
 	$('#wrongletters').empty();
 
