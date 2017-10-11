@@ -6,8 +6,8 @@ let players = {
         imageUrl: "assets/images/luke.png",
         enemyAttackBack: 15
     }, 
-    'darth': {
-        name: 'darth',
+    'vader': {
+        name: 'vader',
         health: 100,
         attack: 14,
         imageUrl: "assets/images/darth.png",
