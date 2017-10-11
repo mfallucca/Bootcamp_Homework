@@ -7,32 +7,65 @@
 
 <!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
 	<header class="text-center">
 		<h1>Star Wars Game!</h1>
 	</header>
 	<div class="container">
-		<h2>Click Your Character</h2>
+		<h2 id="choosetitle">Choose Your Character</h2>
 		<div class="col-md-2">
-			<img src="assets/images/vader.png" class="img-thumbnail" id="vader">
+			<input type="image" class="img-thumbnail choosecharacter" src="assets/images/vader.png" id="Vader" />
 		</div>
 		<div class="col-md-2">
-			<img src="assets/images/han.png" class="img-thumbnail" id="han">
+			<input type="image" class="img-thumbnail choosecharacter" src="assets/images/han.png" id="Han" />
 		</div>
 		<div class="col-md-2">
-			<img src="assets/images/luke.png" class="img-thumbnail" id="luke">
+			<input type="image" class="img-thumbnail choosecharacter" src="assets/images/luke.png" id="Luke" />
 		</div>
 		<div class="col-md-2">
-			<img src="assets/images/boba.png" class="img-thumbnail" id="boba">
+			<input type="image" class="img-thumbnail choosecharacter" src="assets/images/boba.png" id="Boba" />
+		</div>
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-2">
+			<img id="currentEnemy">
 		</div>
 	</div>
 	<div class="container">
-		<h2>Your Character</h2>
+		<h2 id="yourChar">Your Character</h2>
 		<div class="col-md-2">
-
+			<img id="chosenChar">
 		</div>
-
+		<div class="col-md-2">
+			<button id="attackButton" class="fancy-button">Attack!
+			</button>
+		</div>
 	</div>
+	<div class="container">
+		<div class="col-md-4">
+			<h3 id="yourHealth">Your Remaining Health</h3>
+		</div>
+		<div class="col-md-4 offset-md-4">
+			<h3 id="enemyHealth">Enemy's Remaining Health</h3>
+		</div>
+	</div>
+	<div class="container">
+		<h2 id="enemies">Enemy Characters</h2>
+		<div class="col-md-2 enemydiv1">
+			<input type="image" class="img-thumbnail chooseenemy" id="enemy1" />
+		</div>
+		<div class="col-md-2 enemydiv2">
+			<input type="image" class="img-thumbnail chooseenemy" id="enemy2" />
+		</div>
+		<div class="col-md-2 enemydiv3">
+			<input type="image" class="img-thumbnail chooseenemy" id="enemy3" />
+		</div>
+		<div class="col-md-2 enemydiv4">
+			<input type="image" class="img-thumbnail chooseenemy" id="enemy4" />
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>

@@ -1,30 +1,120 @@
+// global variables
+var myhealth = 0;
+var myattack = 0;
+var mychar = "";
+var firstbaddy = "";
+var enemyhealth = 0;
+var enemycounter = 0;
+$("#attackButton").hide();
+$(".chooseenemy").hide();
+$("#yourHealth").hide();
+$("#enemyHealth").hide();
+$("#currentEnemy").hide();
+
+// players variables
 let players = {
-    'luke': {
+    'Luke': {
         name: 'luke',
         health: 120,
         attack: 8,
         imageUrl: "assets/images/luke.png",
-        enemyAttackBack: 15
+        counterAttack: 15
     }, 
-    'vader': {
+    'Vader': {
         name: 'vader',
         health: 100,
         attack: 14,
-        imageUrl: "assets/images/darth.png",
-        enemyAttackBack: 5
+        imageUrl: "assets/images/vader.png",
+        counterAttack: 5
     }, 
-    'han': {
+    'Han': {
         name: 'han',
         health: 150,
         attack: 8,
         imageUrl: "assets/images/han.png",
-        enemyAttackBack: 20
+        counterAttack: 20
     }, 
-    'guido': {
-        name: 'guido',
+    'Boba': {
+        name: 'boba',
         health: 180,
         attack: 7,
-        imageUrl: "assets/images/guido.png",
-        enemyAttackBack: 20
+        imageUrl: "assets/images/boba.png",
+        counterAttack: 20
     }
 };
+
+var mystats = function() {
+    var CC = $("#chosenChar");
+    if (mychar === "Luke" ) {
+    myhealth = players.Luke.health;
+    myattack = players.Luke.attack;
+    CC.attr("src", players.Luke.imageUrl);
+    $(".enemydiv1").remove();
+    }
+    else if (mychar === "Vader" ) {
+    myhealth = players.Vader.health;
+    myattack = players.Vader.attack;
+    CC.attr("src", players.Vader.imageUrl);
+    $(".enemydiv2").remove();
+    }
+    else if (mychar === "Han" ) {
+    myhealth = players.Han.health;
+    myattack = players.Han.attack;
+    CC.attr("src", players.Han.imageUrl);
+    $(".enemydiv3").remove();
+    }
+    else if (mychar === "Boba" ) {
+    myhealth = players.Boba.health;
+    myattack = players.Boba.attack;
+    CC.attr("src", players.Boba.imageUrl);
+    $(".enemydiv4").remove();
+    }
+    CC.attr("class", "img-thumbnail")
+    removeChoosePics();
+    setEnemies();
+    $(".chooseenemy").show();
+    $("#yourHealth").show();
+    $("#yourHealth").html("Your Remaining Health: " + myhealth);
+}
+
+var removeChoosePics = function() {
+    $(".choosecharacter").remove();
+    $("#choosetitle").empty();
+    $("#yourChar").html("You've Chosen " + mychar);
+    $("#enemies").html("Choose Your First Enemy!");
+}
+
+var setEnemies = function() {
+    if (mychar !== "Luke") {
+        $("#enemy1").attr("src", players.Luke.imageUrl);
+    }
+    if (mychar !== "Vader") {
+        $("#enemy2").attr("src", players.Vader.imageUrl);
+    }
+    if (mychar !== "Han") {
+        $("#enemy3").attr("src", players.Han.imageUrl);
+    }
+    if (mychar !== "Boba") {
+        $("#enemy4").attr("src", players.Boba.imageUrl);
+    }
+}
+
+var firstEnemy = function() {
+    if (firstbaddy === "enemy1" ) {
+    enemyhealth = players.Luke.health;
+    enemycounter = players.Luke.counterAttack;
+    CC.attr("src", players.Luke.imageUrl);
+    $(".enemydiv1").remove();
+    }
+}
+
+$('.choosecharacter').on("click", function() {
+    mychar = this.id;
+    mystats();
+});
+
+$('.chooseenemy').on("click", function() {
+    firstbaddy = this.id;
+    firstEnemy();
+});
+
