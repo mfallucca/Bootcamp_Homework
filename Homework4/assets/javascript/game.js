@@ -5,6 +5,13 @@ var mychar = "";
 var firstbaddy = "";
 var enemyhealth = 0;
 var enemycounter = 0;
+var defeat = false;
+var win = false;
+var baseattack = 0;
+var wincount = 0;
+var playlist = ["assets/chewbacca.wav", "assets/laser.mp3", "assets/saber.wav"];
+var audio = new Audio();
+
 $("#attackButton").hide();
 $(".chooseenemy").hide();
 $("#yourHealth").hide();
@@ -12,6 +19,7 @@ $("#enemyHealth").hide();
 $("#currentEnemy").hide();
 $("#yourAttackpower").hide();
 $("#enemyCounterpower").hide();
+$("#chosenChar").hide();
 
 // players variables
 let players = {
@@ -20,28 +28,28 @@ let players = {
         health: 120,
         attack: 8,
         imageUrl: "assets/images/luke.png",
-        counterAttack: 15
+        counterAttack: 14
     }, 
     'Vader': {
         name: 'vader',
         health: 100,
         attack: 14,
         imageUrl: "assets/images/vader.png",
-        counterAttack: 5
+        counterAttack: 10
     }, 
     'Han': {
         name: 'han',
         health: 150,
         attack: 8,
         imageUrl: "assets/images/han.png",
-        counterAttack: 20
+        counterAttack: 12
     }, 
     'Boba': {
         name: 'boba',
         health: 180,
         attack: 7,
         imageUrl: "assets/images/boba.png",
-        counterAttack: 20
+        counterAttack: 10
     }
 };
 
@@ -50,28 +58,33 @@ var mystats = function() {
     if (mychar === "Luke" ) {
     myhealth = players.Luke.health;
     myattack = players.Luke.attack;
+    baseattack = players.Luke.attack;
     CC.attr("src", players.Luke.imageUrl);
     $(".enemydiv1").remove();
     }
     else if (mychar === "Vader" ) {
     myhealth = players.Vader.health;
     myattack = players.Vader.attack;
+    baseattack = players.Vader.attack;
     CC.attr("src", players.Vader.imageUrl);
     $(".enemydiv2").remove();
     }
     else if (mychar === "Han" ) {
     myhealth = players.Han.health;
     myattack = players.Han.attack;
+    baseattack = players.Han.attack;
     CC.attr("src", players.Han.imageUrl);
     $(".enemydiv3").remove();
     }
     else if (mychar === "Boba" ) {
     myhealth = players.Boba.health;
     myattack = players.Boba.attack;
+    baseattack = players.Boba.attack;
     CC.attr("src", players.Boba.imageUrl);
     $(".enemydiv4").remove();
     }
     CC.attr("class", "img-thumbnail")
+    $("#chosenChar").show();
     removeChoosePics();
     setEnemies();
     $(".chooseenemy").show();
@@ -113,6 +126,29 @@ var firstEnemy = function() {
     CC.show();
     $(".enemydiv1").remove();
     }
+    if (firstbaddy === "enemy2" ) {
+    enemyhealth = players.Vader.health;
+    enemycounter = players.Vader.counterAttack;
+    CC.attr("src", players.Vader.imageUrl);
+    CC.show();
+    $(".enemydiv2").remove();
+    }
+    if (firstbaddy === "enemy3" ) {
+    enemyhealth = players.Han.health;
+    enemycounter = players.Han.counterAttack;
+    CC.attr("src", players.Han.imageUrl);
+    CC.show();
+    $(".enemydiv3").remove();
+    }
+    if (firstbaddy === "enemy4" ) {
+    enemyhealth = players.Boba.health;
+    enemycounter = players.Boba.counterAttack;
+    CC.attr("src", players.Boba.imageUrl);
+    CC.show();
+    $(".enemydiv4").remove();
+    }
+    $(".choosefromenemies").hide();
+    $("#enemies").hide();
     $("#attackButton").show();
     $("#enemyCounterpower").show();
     $("#enemyCounterpower").html("Enemy's Counter Attack: " + enemycounter);
@@ -137,20 +173,63 @@ var checkDefeat = function() {
     }
 }
 
-var CheckFirstWin = function() {
-    if (firstwin === true) {
-        // reset to the next 2 baddies
+var CheckWin = function() {
+    if (win === true) {
+        wincount++;
+        win = false;
     }
 }
 
-var CheckSecondWin = function() {
-    if (secondwin === true) {
-        // reset to the next 1 baddies
+var reset = function() {
+    location.reload();
+}
+
+$("#attackButton").on("click", function() {
+    attackMove();
+    myattack = myattack + baseattack;
+    $("#yourAttackpower").html("Your Attack Power: " + myattack);
+    randomSound();
+    CheckFirstEnemyHealth();
+    CheckWin();
+    CheckMyHealth();
+    checkDefeat();
+    CheckVictory();
+});
+
+var attackMove = function() {
+    enemyhealth = enemyhealth - myattack;
+    myhealth = myhealth - enemycounter;
+    $("#enemyHealth").html("Enemy's Remaining Health: " + enemyhealth);
+    $("#yourHealth").html("Your Remaining Health: " + myhealth);
+}
+
+var CheckFirstEnemyHealth = function() {
+    if (enemyhealth <= 0) {
+        win = true;
+        $("#attackButton").hide();
+        $("#enemyHealth").hide();
+        $("#currentEnemy").hide();
+        $("#enemyCounterpower").hide();
+        $(".choosefromenemies").show();
+        $("#enemies").show();
+        $("#enemies").html("Choose Your Next Enemy!");
     }
 }
 
-var CheckThirdWin = function() {
-    if (thirdwin === true) {
-        alert("You've won!")
+var CheckMyHealth = function() {
+    if (myhealth <= 0) {
+        defeat = true;
     }
+}
+
+var CheckVictory = function() {
+    if (wincount === 3) {
+        alert("Congratulations!  You've won!")
+        reset();
+    }
+}
+
+var randomSound = function() {
+    audio.src = playlist[Math.floor(Math.random() * playlist.length)];
+    audio.play();
 }
