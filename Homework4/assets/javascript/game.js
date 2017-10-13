@@ -167,7 +167,9 @@ $('.chooseenemy').on("click", function() {
 });
 
 var checkDefeat = function() {
-    if (defeat === true) {
+    if (defeat === true && wincount === 3) {
+    }
+    else if (defeat === true) {
         alert("You've lost!");
         reset();
     }
@@ -223,8 +225,12 @@ var CheckMyHealth = function() {
 }
 
 var CheckVictory = function() {
-    if (wincount === 3) {
-        alert("Congratulations!  You've won!")
+    if (wincount === 3 && defeat === true) {
+        alert("It's a draw!");
+        reset();
+    }
+    else if (wincount === 3 && defeat === false) {
+        alert("Congratulations, you've won!");
         reset();
     }
 }
