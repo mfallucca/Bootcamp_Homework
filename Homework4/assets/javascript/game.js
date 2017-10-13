@@ -166,14 +166,6 @@ $('.chooseenemy').on("click", function() {
     firstEnemy();
 });
 
-var checkDefeat = function() {
-    if (defeat === true && wincount === 3) {
-    }
-    else if (defeat === true) {
-        alert("You've lost!");
-        reset();
-    }
-}
 
 var CheckWin = function() {
     if (win === true) {
@@ -194,7 +186,6 @@ $("#attackButton").on("click", function() {
     CheckFirstEnemyHealth();
     CheckWin();
     CheckMyHealth();
-    checkDefeat();
     CheckVictory();
 });
 
@@ -231,6 +222,10 @@ var CheckVictory = function() {
     }
     else if (wincount === 3 && defeat === false) {
         alert("Congratulations, you've won!");
+        reset();
+    }
+    else if (wincount !== 3 && defeat === true) {
+        alert("You've lost!")
         reset();
     }
 }
