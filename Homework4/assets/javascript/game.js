@@ -10,6 +10,8 @@ $(".chooseenemy").hide();
 $("#yourHealth").hide();
 $("#enemyHealth").hide();
 $("#currentEnemy").hide();
+$("#yourAttackpower").hide();
+$("#enemyCounterpower").hide();
 
 // players variables
 let players = {
@@ -75,6 +77,8 @@ var mystats = function() {
     $(".chooseenemy").show();
     $("#yourHealth").show();
     $("#yourHealth").html("Your Remaining Health: " + myhealth);
+    $("#yourAttackpower").show();
+    $("#yourAttackpower").html("Your Attack Power: " + myattack);
 }
 
 var removeChoosePics = function() {
@@ -82,6 +86,7 @@ var removeChoosePics = function() {
     $("#choosetitle").empty();
     $("#yourChar").html("You've Chosen " + mychar);
     $("#enemies").html("Choose Your First Enemy!");
+
 }
 
 var setEnemies = function() {
@@ -100,12 +105,19 @@ var setEnemies = function() {
 }
 
 var firstEnemy = function() {
+    var CC = $("#currentEnemy");
     if (firstbaddy === "enemy1" ) {
     enemyhealth = players.Luke.health;
     enemycounter = players.Luke.counterAttack;
     CC.attr("src", players.Luke.imageUrl);
+    CC.show();
     $(".enemydiv1").remove();
     }
+    $("#attackButton").show();
+    $("#enemyCounterpower").show();
+    $("#enemyCounterpower").html("Enemy's Counter Attack: " + enemycounter);
+    $("#enemyHealth").show();
+    $("#enemyHealth").html("Enemy's Remaining Health: " + enemyhealth);
 }
 
 $('.choosecharacter').on("click", function() {
@@ -118,3 +130,27 @@ $('.chooseenemy').on("click", function() {
     firstEnemy();
 });
 
+var checkDefeat = function() {
+    if (defeat === true) {
+        alert("You've lost!");
+        reset();
+    }
+}
+
+var CheckFirstWin = function() {
+    if (firstwin === true) {
+        // reset to the next 2 baddies
+    }
+}
+
+var CheckSecondWin = function() {
+    if (secondwin === true) {
+        // reset to the next 1 baddies
+    }
+}
+
+var CheckThirdWin = function() {
+    if (thirdwin === true) {
+        alert("You've won!")
+    }
+}
