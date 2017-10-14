@@ -28,7 +28,7 @@ let players = {
         health: 120,
         attack: 8,
         imageUrl: "assets/images/luke.png",
-        counterAttack: 14
+        counterAttack: 15
     }, 
     'Vader': {
         name: 'vader',
@@ -42,14 +42,14 @@ let players = {
         health: 150,
         attack: 8,
         imageUrl: "assets/images/han.png",
-        counterAttack: 12
+        counterAttack: 15
     }, 
     'Boba': {
         name: 'boba',
-        health: 180,
+        health: 160,
         attack: 7,
         imageUrl: "assets/images/boba.png",
-        counterAttack: 10
+        counterAttack: 20
     }
 };
 
