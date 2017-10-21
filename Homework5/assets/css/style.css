@@ -1,0 +1,39 @@
+body{
+	background: url('../images/baseball.jpg');
+	font-size: 25px;
+}
+
+header{
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.btn-primary,.reset{
+	background-color: #a13312;
+	color: white;
+	font-size: 30px;
+	padding: 20px;
+	margin-top: 100px;
+}
+.btn-primary:hover, .reset:hover{
+	background-color: #448f11;
+}
+
+.container{
+	margin-top: 50px;
+	text-align: center;
+	height: 100%;
+	width: 700px;
+}
+
+.thisChoice:hover{
+	background-color: #448f11;
+	color: white;
+	padding: 10px;
+}
+
+
+h1 {
+	font-family: times new roman, serif;
+	font-weight: bold;
+}
