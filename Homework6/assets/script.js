@@ -1,4 +1,4 @@
-      var topics = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+      var topics = ["The Matrix", "Pugs", "Sega", "Mario", "Luigi", "Royals", "Chiefs", "Bubb Rubb"];
 
       // displaytopicInfo function re-renders the HTML to display the appropriate content
       function displaytopicInfo() {
