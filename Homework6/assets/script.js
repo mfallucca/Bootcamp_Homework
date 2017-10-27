@@ -21,7 +21,7 @@
             // Only taking action if the photo has an appropriate rating
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
               // Creating a div with the class "item"
-              var gifDiv = $("<div class='col-sm-3, col-md-3'>");
+              var gifDiv = $("<div class='col-sm-3, col-md-3, col-xs-3'>");
 
               // Storing the result item's rating
               var rating = results[i].rating;
