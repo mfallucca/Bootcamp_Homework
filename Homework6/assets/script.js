@@ -12,7 +12,7 @@
           url: queryURL,
           method: "GET"
         }).done(function(response) {
-
+          console.log(response);
           var results = response.data;
 
           // Looping over every result item
@@ -21,7 +21,7 @@
             // Only taking action if the photo has an appropriate rating
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
               // Creating a div with the class "item"
-              var gifDiv = $("<div class='item'>");
+              var gifDiv = $("<div class='col-sm-3, col-md-3'>");
 
               // Storing the result item's rating
               var rating = results[i].rating;
@@ -30,11 +30,14 @@
               var p = $("<p>").text("Rating: " + rating);
 
               // Creating an image tag
-              var personImage = $("<img>");
+              var personImage = $("<img data-state='still' class='gif'>");
 
               // Giving the image tag an src attribute of a proprty pulled off the
               // result item
-              personImage.attr("src", results[i].images.fixed_height.url);
+              personImage.attr("src", results[i].images.fixed_height_small_still.url);
+              personImage.attr("data-still", results[i].images.fixed_height_small_still.url);
+              personImage.attr("data-animate", results[i].images.fixed_height_small.url);
+              personImage.attr("data-state", "still");
 
               // Appending the paragraph and personImage we created to the "gifDiv" div we created
               gifDiv.append(p);
@@ -92,5 +95,23 @@
       $(document).on("click", ".topic-clicked", displaytopicInfo);
 
 
+    $(document).on("click", ".gif", function() {
+      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      var state = $(this).attr("data-state");
+      console.log(state);
+      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+      // Then, set the image's data-state to animate
+      // Else set src to the data-still value
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
+
+
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
+
