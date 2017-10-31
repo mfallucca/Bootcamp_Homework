@@ -1,5 +1,5 @@
 
-// 1. Initialize Firebase
+// Initialize Firebase
 var config = {
     apiKey: "AIzaSyDhlqAjUpBCv0SYFnMK7xJtbG7j3WkR6pk",
     authDomain: "kucoding-f6b4b.firebaseapp.com",
@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 
-// 2. Button for adding Trains
+// Button for adding trains
 $("#addTrainBtn").on("click", function() {
 
 	// Grabs user input
@@ -50,7 +50,7 @@ $("#addTrainBtn").on("click", function() {
 });
 
 
-// 3. Create Firebase event for adding Train to the database and a row in the html when a user adds an entry
+// Create Firebase event for adding Train to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
 	console.log(childSnapshot.val());
@@ -61,13 +61,13 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
 	var trainFirst = childSnapshot.val().first;
 	var trainFreq = childSnapshot.val().freq;
 
-	// train Info
+	// Train Info
 	console.log(trainName);
 	console.log(trainDest);
 	console.log(trainFirst);
 	console.log(trainFreq);
 
-	// Prettify the Train start
+	// Clean up  the Train freq
 	var firstTimeConverted = moment(trainFirst, "hh:mm").subtract(1, "years");
     var currentTime = moment();
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
@@ -81,6 +81,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
 });
 
+// Field validation hhmm
 function validateHhMm(inputField) {
     var isValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(inputField.value);
 
