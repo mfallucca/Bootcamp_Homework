@@ -27,7 +27,7 @@ var getArtistNames = function(artist) {
   return artist.name;
 };
 
-//Function for finding songs on Spotify
+
 var getSpotify = function(songName) {
 
   if (songName === undefined) {
@@ -46,18 +46,20 @@ var spotify = new Spotify({
     }
 
     var songs = data.tracks.items;
-    var data = []; //empty array to hold data
+    var data = [];
 
     for (var i = 0; i < 10; i++) {
       data.push({
-        'artist(s)': songs[i].artists.map(getArtistNames),
-        'song name: ': songs[i].name,
-        'preview song: ': songs[i].preview_url,
-        'album: ': songs[i].album.name,
+        Artist : songs[i].artists.map(getArtistNames),
+        Name : songs[i].name,
+        Preview : songs[i].preview_url,
+        Album : songs[i].album.name,
       });
     }
     for (i=0; i < data.length; i++) {
-      console.log(data[i]);
+      console.log("----------------------------------------------------------");
+      console.log("Artist: " + data[i].Artist + '\n' + "Song Name: " + data[i].Name + '\n' + "Song Preview URL: " + data[i].Preview + '\n' + "Album Name: " + data[i].Album);
+      console.log("----------------------------------------------------------");    
     }
     writeLog(data);
   });
@@ -72,14 +74,18 @@ var getTweets = function() {
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
     if (!error) {
-      var data = []; //empty array to hold data
+      var data = [];
       for (var i = 0; i < tweets.length; i++) {
         data.push({
-            'created at: ' : tweets[i].created_at,
-            'Tweets: ' : tweets[i].text,
+            Created : tweets[i].created_at,
+            Tweets : tweets[i].text
         });
       }
-      console.log(data);
+      for (i=0; i<data.length; i++) {
+        console.log("----------------------------------------------------------");
+        console.log('Created on: ' + data[i].Created + '\n' + 'Tweet text: ' + data[i].Tweets);
+        console.log("----------------------------------------------------------");
+      }
       writeLog(data);
     }
   });
@@ -146,11 +152,10 @@ var choice = function(choiceEntry, argData) {
       doWhatItSays();
       break;
     default:
-      console.log('LIRI doesn\'t know that');
+      console.log('LIRI doesn\'t know that command');
   }
 }
 
-//run this on load of js file
 var master = function(argOne, argTwo) {
   choice(argOne, argTwo);
 };
