@@ -22,7 +22,7 @@ var userGuess = 10;
 
 		console.log(hangmanGame.currentWord.display());
 
-	prompt.get(["Guess a letter"], function(err, result){
+	prompt.get(["theGuess"], function(err, result){
 		if(err){
 			return err;
 		}
