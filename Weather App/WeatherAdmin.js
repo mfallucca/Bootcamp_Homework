@@ -3,11 +3,13 @@ var UserSearch = require('./UserSearch.js')
 
 var WeatherAdmin = function(name, location) {
 	this.newUserSearch = function() {
-		fs.appendFile('./log.txt', '\n' + name + " " + location, function(error, data) {
+		var newUser = new UserSearch(name, location);
+		fs.appendFile('./log.txt', '\n' + newUser.user + " " + newUser.loc + " " + newUser.date, function(error, data) {
 			if (error) {
 				return console.log(error);
 			}
 			console.log('Data was added to log!')
+			newUser.getWeather();
 		})
 	}
 
