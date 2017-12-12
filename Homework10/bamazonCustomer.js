@@ -16,6 +16,7 @@ var connection = mysql.createConnection({
 var userSelectedID = 0;
 var userQuantity = 0;
 var currentStock = 0;
+var currentPrice = 0;
 
 
 listallItems();
@@ -72,9 +73,10 @@ inquirer
 }
 
 function checkQuantity() {
-	var query = "SELECT stock_quantity FROM products WHERE ?";
+	var query = "SELECT stock_quantity,price FROM products WHERE ?";
 	connection.query(query, { item_id: userSelectedID }, function(err, res) {
 		currentStock = res[0].stock_quantity;
+		currentPrice = res[0].price;
 
 		if (currentStock >= userQuantity) {
 			console.log("\nCongratulations, we have enough in stock!");
@@ -102,6 +104,7 @@ function updateStock() {
     function(error) {
       	if (error) throw err;
       	console.log("\nOrder completed");
+      	console.log("\nYour order total is $" + (currentPrice * userQuantity));
       	CLI();
     }
   	);
