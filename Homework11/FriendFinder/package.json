@@ -1,0 +1,24 @@
+{
+  "name": "homework11",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "me",
+  "license": "ISC",
+  "description": "yay",
+  "repository": {
+    "type": "git",
+    "url": "na"
+  },
+  "keywords": [
+    "homework11"
+  ],
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}

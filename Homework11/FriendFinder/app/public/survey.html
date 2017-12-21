@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Survey</h1>
+        <hr>
+        <form class="form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="text" class="form-control" id="image" required>
+            </div>
+            <hr>
+            <h2>Please answer the following questions</h2>
+            <div class="form-group">
+                <label for="quest1" class="lead">You prefer ketchup over mustard</label>
+                <select id="quest1" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="quest2" class="lead">It is perfectly normal to eat cookies for dinner</label>
+                <select id="quest2" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="quest3" class="lead">Dogs are vastly superior to cats</label>
+                <select id="quest3" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="quest4" class="lead">Orange is the king of all colors</label>
+                <select id="quest4" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="quest5" class="lead">Mayonnaise is disgusting</label>
+                <select id="quest5" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="quest6" class="lead">Often times I dream about eating taco bell</label>
+                <select id="quest6" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="quest7" class="lead">The Kardashians should be banned from TV</label>
+                <select id="quest7" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="quest8" class="lead">Picking somewhere to eat is harder than calculus</label>
+                <select id="quest8" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="quest9" class="lead">Rocky is an overrated movie</label>
+                <select id="quest9" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="quest10" class="lead">But...her emails!</label>
+                <select id="quest10" class="form-control" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <br />
+            <button type="button" id="submit" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Submit</button>
+        </form>
+        <br />
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends" target='_blank'>API Friends List</a></p>
+            </div>
+        </footer>
+    </div>
+    <div class="modal fade" id="modal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    var userName, userImg, q1Result, q2Result, q3Result, q4Result, q5Result, q6Result, q7Result, q8Result, q9Result, q10Result, newUser;
+    $('#submit').on('click', function(event) {
+        event.preventDefault();
+
+        userName = $('#name').val();
+        userImg = $('#image').val();
+        q1Result = parseInt($('#quest1').val());
+        q2Result = parseInt($('#quest2').val());
+        q3Result = parseInt($('#quest3').val());
+        q4Result = parseInt($('#quest4').val());
+        q5Result = parseInt($('#quest5').val());
+        q6Result = parseInt($('#quest6').val());
+        q7Result = parseInt($('#quest7').val());
+        q8Result = parseInt($('#quest8').val());
+        q9Result = parseInt($('#quest9').val());
+        q10Result = parseInt($('#quest10').val());
+        newUser = {
+            name: userName,
+            image: userImg,
+            responses: [q1Result, q2Result, q3Result, q4Result, q5Result, q6Result, q7Result, q8Result, q9Result, q10Result],
+            total: q1Result + q2Result + q3Result + q4Result + q5Result + q6Result + q7Result + q8Result + q9Result + q10Result
+        };
+
+        var modalTitle = $('.modal-title');
+        var modalBody = $('.modal-body');
+        var modal = $('#modal');
+        var friendsAPI = '/api/friends';
+        if (formIsValid()) {
+            $.get(friendsAPI, function(data) {
+                var match = makeMatch(data);
+                if (match.name !== undefined) {
+                    modalTitle.text('You\'ve been matched!');
+                    modalBody.html('<p class="strong">You\'re most compatible with:</p><p>' + match.name + '</p><img src="' + match.photo + '" height="100">');
+                } else {
+                    modalTitle.text('Not enough friends!');
+                    modalBody.text('Sorry, there aren\'t enough friends to match you with');
+                }
+            }).then(function() {
+                modal.show();
+                $('.form')[0].reset();
+                $.post(friendsAPI, newUser);
+            });
+        } else {
+            modalTitle.text('Error');
+            modalBody.text('Please answer each question and fill in each input box');
+            modal.show();
+        }
+    });
+    function formIsValid() {
+        return (userName !== '' && userImg !== '' && !isNaN(q1Result) && !isNaN(q2Result) && !isNaN(q3Result) && !isNaN(q4Result) &&
+            !isNaN(q5Result) && !isNaN(q6Result) && !isNaN(q7Result) && !isNaN(q8Result) && !isNaN(q9Result) && !isNaN(q10Result));
+    }
+    function makeMatch(data) {
+        var difference = 50;
+        var minName;
+        var minImage;
+        data.forEach(function(person) {
+            var localDiff = Math.abs(newUser.total - person.total);
+            if (localDiff < difference) {
+                difference = localDiff;
+                minName = person.name;
+                minImage = person.photo;
+            }
+        });
+        return {
+            name: minName,
+            photo: minImage
+        };
+    }
+    </script>
+</body>
